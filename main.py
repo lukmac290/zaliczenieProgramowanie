@@ -1,5 +1,5 @@
-from PrimeNumberService import checkPrimeNumber
-from ImageService import InvertPictureColors
+from services.PrimeNumberService import checkPrimeNumber
+from services.ImageService import InvertPictureColors
 
 #zad1
 data = input("Provide any positive number: ")
