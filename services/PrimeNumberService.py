@@ -10,4 +10,5 @@ def checkPrimeNumber(data):
                     return "Provided number is not a prime numebr."
         if checkSum == 2:
             return "Provided number is a prime number."
-
+        else:
+            return "Provided number is not a prime number."
