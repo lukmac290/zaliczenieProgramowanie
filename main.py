@@ -8,6 +8,7 @@ app = FastAPI()
 # W folderze z mainem w cmd 'uvicorn main:app --reload'
 
 #zad1
+#http://127.0.0.1:8000/primeverif/20
 @app.get("/primeverif/{number}")
 def prime(number: str):
     response = {
