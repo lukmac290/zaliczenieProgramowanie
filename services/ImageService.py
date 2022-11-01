@@ -1,8 +1,12 @@
 from PIL import Image
-import PIL.ImageOps  
+import PIL.ImageOps
+from fastapi.responses import FileResponse
+from os.path import exists
 
-def InvertPictureColors(path):
-    image = Image.open(path)
-    inverted_image = PIL.ImageOps.invert(image)
-    inverted_image.show()
-    print("Image colors inverted succesfully")
+def InvertPictureColors():
+    if(exists('image.jpg')):
+        image = Image.open('image.jpg')
+        inverted_image = PIL.ImageOps.invert(image).save('inverted_image.jpg')
+        return FileResponse('inverted_image.jpg', media_type="image/jpeg")
+    else:
+        return "File does not exist"
