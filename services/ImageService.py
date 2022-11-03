@@ -10,3 +10,9 @@ def InvertPictureColors():
         return FileResponse('inverted_image.jpg', media_type="image/jpeg")
     else:
         return "File does not exist"
+
+def Upload(file):
+    with open('image.jpg','wb') as image:
+        image.write(file)
+        image.close()
+        return "Image succesfully uploaded"
