@@ -6,6 +6,7 @@ from services.ImageService import InvertPictureColors, Upload
 from services.AuthorizationService import GenerateToken
 from services.TimeService import GetCurrentDateTime
 
+
 app = FastAPI()
 # W folderze z mainem w cmd 'uvicorn main:app --reload'
 #swagger - http://127.0.0.1:8000/docs
