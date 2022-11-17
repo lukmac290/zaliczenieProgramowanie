@@ -1,5 +1,5 @@
 from typing import Union
-from fastapi import FastAPI, Fil
+from fastapi import FastAPI, File
 from services.PrimeNumberService import checkPrimeNumber
 from services.ImageService import InvertPictureColors
 from services.AuthorizationService import GenerateToken
