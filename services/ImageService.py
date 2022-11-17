@@ -6,9 +6,9 @@ from fastapi.responses import StreamingResponse
 
 
 def InvertPictureColors(file: bytes = File()):
-    image = Image.open(io.BytesIO(file))
-    inverted_image = PIL.ImageOps.invert(image)
-    responseImage = io.BytesIO()
-    inverted_image.save(responseImage, "JPEG")
-    responseImage.seek(0)
-    return StreamingResponse(responseImage, media_type="image/jpeg")
+    input = Image.open(io.BytesIO(file))
+    inverted = PIL.ImageOps.invert(input)
+    response = io.BytesIO()
+    inverted.save(response, "JPEG")
+    response.seek(0)
+    return StreamingResponse(response, media_type="image/jpeg")
