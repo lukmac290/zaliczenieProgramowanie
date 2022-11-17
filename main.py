@@ -1,8 +1,7 @@
 from typing import Union
-from fastapi import FastAPI, File
-
+from fastapi import FastAPI, Fil
 from services.PrimeNumberService import checkPrimeNumber
-from services.ImageService import InvertPictureColors, Upload
+from services.ImageService import InvertPictureColors
 from services.AuthorizationService import GenerateToken
 from services.TimeService import GetCurrentDateTime
 
@@ -16,13 +15,9 @@ def prime(number: str):
     return checkPrimeNumber(number)
 
 #zad2
-@app.post("/project/uploadimage")
-def UploadImage(file: bytes = File(...)):
-    return Upload(file)
-
-@app.get("/project/invertimage")
-def imageConvertedColors():
-    return InvertPictureColors()
+@app.post("/project/invertpicture")
+def invertpicture(file: bytes = File()):
+    return InvertPictureColors(file)
 
 #zad3
 @app.get("/project/generatetoken")
